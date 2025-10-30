@@ -19,4 +19,11 @@ class ValidatorEmailTest {
         var validatorEmail = new ValidatorEmail();
         Assertions.assertFalse(validatorEmail.validatorEmail("test.com"));
     }
+
+    @Test
+    void mainEmailIsValid(){
+        var validatorEmail = new ValidatorEmail();
+        assertTrue(validatorEmail.validatorEmail(validatorEmail.getEmail()));
+    }
+
 }
