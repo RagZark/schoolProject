@@ -6,24 +6,17 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
-class ValidatorEmailTest {
+class EmailTest {
 
     @Test
     void emailIsValid(){
-        var validatorEmail = new ValidatorEmail();
-        assertTrue(validatorEmail.validatorEmail("test@test.com"));
+        var validatorEmail = new Email();
+        assertTrue(validatorEmail.validatorAddress("test@test.com"));
     }
 
     @Test
     void emailIsInvalid(){
-        var validatorEmail = new ValidatorEmail();
-        Assertions.assertFalse(validatorEmail.validatorEmail("test.com"));
+        var validatorEmail = new Email();
+        Assertions.assertFalse(validatorEmail.validatorAddress("test.com"));
     }
-
-    @Test
-    void mainEmailIsValid(){
-        var validatorEmail = new ValidatorEmail();
-        assertTrue(validatorEmail.validatorEmail(validatorEmail.getEmail()));
-    }
-
 }
