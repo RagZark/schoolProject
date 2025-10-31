@@ -14,9 +14,10 @@ public class CPF {
     }
 
     public String cpfIsValid(String cpf) throws InvalidAttributeValueException {
-        if (cpf.matches(".*[a-zA-Z] + .*")){
-            throw new InvalidAttributeValueException("Please type your 11 number CPF");
+        if (cpf.matches(".*[a-zA-Z].*") || cpf.length() != 11){
+            throw new InvalidAttributeValueException("Please type a valid 11 digits CPF number.");
         }
+
         String cpf11digits = cpf.replaceAll("[^0-9]", "");
         if (checkTenthDigit(cpf) && checkEleventhDigit(cpf)){
             return cpf11digits;
@@ -48,11 +49,7 @@ public class CPF {
         int actualTenthDigit = cpf.charAt(9) - '0';
 
 
-        if (calcTenthDigit == actualTenthDigit) {
-            return true;
-        } else {
-            return false;
-        }
+        return calcTenthDigit == actualTenthDigit;
     }
 
     public boolean checkEleventhDigit(String cpf) {
@@ -77,10 +74,6 @@ public class CPF {
         int actualEleventhDigit = cpf.charAt(10) - '0';
 
 
-        if (calcEleventhDigit == actualEleventhDigit) {
-            return true;
-        } else {
-            return false;
-        }
+        return calcEleventhDigit == actualEleventhDigit;
     }
 }

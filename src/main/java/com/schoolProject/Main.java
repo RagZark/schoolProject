@@ -9,12 +9,11 @@ public class Main {
         Email email = new Email();
         email.setAddress("voltaire@gmail.com");
         System.out.println(email.getAddress());
+
         var student = new Student();
 
         CPF cpf = new CPF();
-
         cpf.setCpf("49991537007");
-
         System.out.println(cpf.getCpf());
 
     }
