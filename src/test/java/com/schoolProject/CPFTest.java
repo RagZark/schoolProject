@@ -48,6 +48,4 @@ class CPFTest {
 
         assertNotEquals("49991537027", cpf.cpfIsValid("49991537007"));
     }
-
-
 }

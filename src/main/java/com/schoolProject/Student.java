@@ -1,5 +1,7 @@
 package com.schoolProject;
 
+import javax.naming.directory.InvalidAttributeValueException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Student {
@@ -7,7 +9,7 @@ public class Student {
     private CPF cpf;
     private String name;
     private Email email;
-    private List<Phone> phoneNumbers;
+    private List<Phone> phoneNumbers = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -31,5 +33,9 @@ public class Student {
 
     public void setCpf(CPF cpf) {
         this.cpf = cpf;
+    }
+
+    public void addPhoneNumber(String ddd, String number) throws InvalidAttributeValueException {
+
     }
 }

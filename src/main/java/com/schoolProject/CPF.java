@@ -14,7 +14,7 @@ public class CPF {
     }
 
     public String cpfIsValid(String cpf) throws InvalidAttributeValueException {
-        if (cpf.matches(".*[a-zA-Z].*") || cpf.length() != 11){
+        if (cpf.matches(".*[a-zA-Z\\s].*") || cpf.length() != 11){
             throw new InvalidAttributeValueException("Please type a valid 11 digits CPF number.");
         }
 
