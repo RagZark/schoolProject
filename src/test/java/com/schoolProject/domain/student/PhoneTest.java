@@ -1,6 +1,5 @@
-package com.schoolProject.domain;
+package com.schoolProject.domain.student;
 
-import com.schoolProject.domain.domain.student.Phone;
 import org.junit.jupiter.api.Test;
 
 import java.lang.IllegalArgumentException;

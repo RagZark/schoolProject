@@ -1,8 +1,8 @@
-package com.schoolProject.domain;
+package com.schoolProject.domain.student;
 
 
-import com.schoolProject.domain.domain.student.CPF;
 import org.junit.jupiter.api.Test;
+
 import java.lang.IllegalArgumentException;
 import static org.junit.jupiter.api.Assertions.*;
 

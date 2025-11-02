@@ -1,7 +1,6 @@
-package com.schoolProject.domain;
+package com.schoolProject.domain.student;
 
 
-import com.schoolProject.domain.domain.student.Email;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
