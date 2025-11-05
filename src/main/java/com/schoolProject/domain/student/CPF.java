@@ -10,7 +10,7 @@ public class CPF {
     }
 
     public String getCpf() {
-        return cpf;
+        return this.cpf;
     }
 
     public String validateCpf(String cpf) throws IllegalArgumentException {

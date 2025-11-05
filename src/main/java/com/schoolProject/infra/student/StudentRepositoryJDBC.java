@@ -1,6 +1,7 @@
 package com.schoolProject.infra.student;
 
 import com.schoolProject.domain.student.CPF;
+import com.schoolProject.domain.student.Phone;
 import com.schoolProject.domain.student.Student;
 import com.schoolProject.domain.student.StudentsRepository;
 
@@ -19,8 +20,24 @@ public class StudentRepositoryJDBC implements StudentsRepository {
 
     @Override
     public void enrollStudent(Student student) throws SQLException {
-        String sql = "INSERT INTO STUDENT VALUES (NAME, CPF, EMAIL)";
-        PreparedStatement ps = connection.prepareStatement(sql);
+        String sqlStudent = "INSERT INTO STUDENT (cpf, name, email) VALUES (?, ?, ?)";
+        try (PreparedStatement ps = connection.prepareStatement(sqlStudent)){
+            ps.setString(1, student.getCpf());
+            ps.setString(2, student.getName());
+            ps.setString(3, student.getEmail());
+            ps.execute();
+        }
+
+        String sqlPhone = "INSERT INTO PHONE_NUMBERS (cpf, ddd, number) VALUES (?, ?, ?)";
+        try (PreparedStatement ps = connection.prepareStatement(sqlPhone)){
+            for (Phone phone : student.getPhoneNumbers()){
+                ps.setString(1, student.getCpf());
+                ps.setString(2, phone.getDdd());
+                ps.setString(3, phone.getNumber());
+                ps.addBatch();
+            }
+            ps.executeBatch();
+        }
     }
 
     @Override

@@ -19,12 +19,12 @@ public class Student {
         return name;
     }
 
-    public Email getEmail() {
-        return email;
+    public String getEmail() {
+        return email.getAddress();
     }
 
-    public CPF getCpf() {
-        return cpf;
+    public String getCpf() {
+        return cpf.getCpf();
     }
 
     public void addPhoneNumber(String ddd, String number) throws IllegalArgumentException {
@@ -33,5 +33,10 @@ public class Student {
 
     public List<Phone> getPhoneNumbers(){
         return phoneNumbers;
+    }
+
+    @Override
+    public String toString(){
+        return "Name " + this.name + ", CPF: " + this.cpf.getCpf() + ", Email: " + this.email + "\nNumber: " + this.getPhoneNumbers();
     }
 }

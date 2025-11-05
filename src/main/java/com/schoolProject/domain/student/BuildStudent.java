@@ -16,8 +16,7 @@ public class BuildStudent {
         return this;
     }
 
-    public Student create(){
+    public Student create() {
         return this.student;
     }
-
 }
