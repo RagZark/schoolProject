@@ -13,4 +13,12 @@ class PasswordHasherMD5Test {
 
         assertTrue(passwordHasherMD5.passwordHasherValidate(password, "rafael"));
     }
+
+    @Test
+    void shouldReturnFalse() {
+        PasswordHasherMD5 passwordHasherMD5 = new PasswordHasherMD5();
+        String password = passwordHasherMD5.passwordHasher("rafael");
+
+        assertFalse(passwordHasherMD5.passwordHasherValidate(password, "mateus"));
+    }
 }
