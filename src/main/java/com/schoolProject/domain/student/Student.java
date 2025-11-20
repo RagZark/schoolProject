@@ -8,7 +8,6 @@ public class Student {
     private final String name;
     private final Email email;
     private final List<Phone> phoneNumbers = new ArrayList<>();
-
     private String password;
 
     public Student(CPF cpf, String name, Email email){
